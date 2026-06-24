@@ -1,0 +1,43 @@
+{
+  "name": "@skalfa/skalfa-app",
+  "version": "1.0.0",
+  "scripts": {
+    "dev"      :  "concurrently --raw \"bun run barrels\" \"next dev\"",
+    "build"    :  "next build",
+    "start"    :  "next start",
+    "test"     :  "bun tsc --noEmit",
+    "lint"     :  "npx eslint app/* components/* utils/* contexts/* schema/*",
+    "light"    :  "bun utils/commands/light.ts",
+    "barrels"  :  "bun run utils/commands/barrels.ts"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/free-regular-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@react-google-maps/api": "^2.20.7",
+    "@skalfa/skalfa-app-core": "^1.0.0",
+    "@tailwindcss/postcss": "^4.0.0",
+    "axios": "^1.12.0",
+    "moment": "^2.30.1",
+    "next": "16.1.1",
+    "postcss": "^8.5.1",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "tailwindcss": "^4.0.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "barrelsby": "^2.8.1",
+    "commander": "^14.0.2",
+    "concurrently": "^9.2.1",
+    "eslint": "^9.19.0",
+    "eslint-config-next": "^15.1.6",
+    "eslint-config-prettier": "^10.0.1",
+    "typescript": "^5"
+  }
+}
