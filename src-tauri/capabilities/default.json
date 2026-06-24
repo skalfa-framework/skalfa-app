@@ -1,0 +1,11 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/schema-capabilities.json",
+  "identifier": "default-capability",
+  "description": "Default capabilities for Skalfa App",
+  "windows": ["*"],
+  "permissions": [
+    "core:default",
+    "core:event:default",
+    "core:webview:default"
+  ]
+}

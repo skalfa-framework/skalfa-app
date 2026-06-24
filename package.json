@@ -2,13 +2,13 @@
   "name": "@skalfa/skalfa-app",
   "version": "1.0.0",
   "scripts": {
-    "dev"      :  "concurrently --raw \"bun run barrels\" \"next dev\"",
-    "build"    :  "next build",
-    "start"    :  "next start",
-    "test"     :  "bun tsc --noEmit",
-    "lint"     :  "npx eslint app/* components/* utils/* contexts/* schema/*",
-    "light"    :  "bun utils/commands/light.ts",
-    "barrels"  :  "bun run utils/commands/barrels.ts"
+    "dev": "concurrently --raw \"bun run barrels\" \"next dev\"",
+    "build": "next build",
+    "start": "next start",
+    "test": "bun tsc --noEmit",
+    "lint": "npx eslint app/* components/* utils/* contexts/* schema/*",
+    "light": "bun utils/commands/light.ts",
+    "barrels": "bun run utils/commands/barrels.ts"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
@@ -30,14 +30,15 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
     "barrelsby": "^2.8.1",
     "commander": "^14.0.2",
     "concurrently": "^9.2.1",
     "eslint": "^9.19.0",
     "eslint-config-next": "^15.1.6",
     "eslint-config-prettier": "^10.0.1",
-    "typescript": "^5"
-  }
+    "typescript": "^6.0.3"
+  },
+  "description": "Modern frontend starter template built with Next.js, pre-configured with PWA, Tauri, and modular extensions."
 }

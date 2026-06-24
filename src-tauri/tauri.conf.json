@@ -1,0 +1,36 @@
+{
+  "productName": "Skalfa App",
+  "version": "0.1.0",
+  "identifier": "com.skalfa.app",
+  "build": {
+    "beforeDevCommand": "",
+    "beforeBuildCommand": "bun run build",
+    "devUrl": "http://localhost:3000",
+    "frontendDist": "../out"
+  },
+  "app": {
+    "security": {
+      "csp": null
+    },
+    "windows": [
+      {
+        "title": "Skalfa App",
+        "width": 800,
+        "height": 600,
+        "resizable": true,
+        "fullscreen": false
+      }
+    ]
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
+  }
+}

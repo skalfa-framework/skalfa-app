@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
+const isTauri = process.env.IS_TAURI === "true";
+
+let nextConfig: NextConfig = {
   reactStrictMode: true,
   images: {
     remotePatterns: [
@@ -14,4 +16,16 @@ const nextConfig: NextConfig = {
   },
 };
 
+if (isTauri) {
+  nextConfig = {
+    ...nextConfig,
+    output: "export",
+    images: {
+      ...nextConfig.images,
+      unoptimized: true,
+    },
+  };
+}
+
 export default nextConfig;
+
