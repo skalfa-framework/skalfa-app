@@ -11,19 +11,25 @@
 !.yarn/versions
 
 # testing
+/test
 /coverage
-/pages/user/*
-
-# next.js
-/.next/
-/out/
 
 # production
+/.next
 /build
+/out
+*.tsbuildinfo
+next-env.d.ts
 
-# misc
-.DS_Store
+# bundle
+**/*.trace
+**/*.zip
+**/*.tar.gz
+**/*.tgz
+**/*.log
+**/*.bun
 *.pem
+.DS_Store
 
 # debug
 npm-debug.log*
@@ -31,15 +37,17 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
+# env
 .env
+.env.local
+.env.dev
+.env.production
 
 # vercel
 .vercel
 
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+# ide
+.vscode
 
 # public
 public/pdf.worker.*
