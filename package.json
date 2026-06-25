@@ -1,6 +1,6 @@
 {
   "name": "@skalfa/skalfa-app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "dev": "concurrently --raw \"bun run barrels\" \"next dev\"",
     "build": "next build",
