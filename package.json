@@ -2,13 +2,12 @@
   "name": "@skalfa/skalfa-app",
   "version": "1.0.2",
   "scripts": {
-    "dev": "concurrently --raw \"bun run barrels\" \"next dev\"",
+    "dev": "concurrently --raw \"bun run skalfa watch:barrels\" \"next dev\"",
     "build": "next build",
     "start": "next start",
     "test": "bun tsc --noEmit",
     "lint": "npx eslint app/* components/* utils/* contexts/* schema/*",
-    "light": "bun utils/commands/light.ts",
-    "barrels": "bun run utils/commands/barrels.ts"
+    "skalfa": "bun run utils/commands/skalfa.ts"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
