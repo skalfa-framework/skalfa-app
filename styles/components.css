@@ -1,0 +1,1392 @@
+@layer components {
+  /* ============================ */
+  /* ## Button                    */
+  /* ============================ */
+  .button {
+    @apply whitespace-nowrap cursor-pointer disabled:!text-disable disabled:!bg-light-disable;
+    filter: brightness(0.94);
+  }
+
+  .button:disabled {
+    cursor: default;
+    pointer-events: none;
+  }
+
+  .button:hover {
+    filter: brightness(1);
+  }
+
+  .button:active {
+    transform: scale(1);
+    filter: brightness(0.9);
+    box-shadow: inset 0 0 5px 0 rgba(0, 0, 0, 0.25);
+  }
+
+  .button-loading {
+    border-radius: 50%;
+    display: inline-block;
+    border-top: 2.5px solid;
+    border-left: 2.5px solid;
+    border-right: 2.5px solid transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* ## Button variant */
+  .button-solid-primary { @apply bg-primary text-white; }
+  .button-solid-secondary { @apply bg-secondary text-white; }
+  .button-solid-warning { @apply bg-warning text-white; }
+  .button-solid-danger { @apply bg-danger text-white; }
+  .button-solid-success { @apply bg-success text-white; }
+
+  .button-outline-primary { @apply border text-primary; }
+  .button-outline-secondary { @apply border text-secondary; }
+  .button-outline-warning { @apply border text-warning; }
+  .button-outline-danger { @apply border text-danger; }
+  .button-outline-success { @apply border text-success; }
+
+  .button-light-primary { @apply bg-light-primary text-primary; }
+  .button-light-secondary { @apply bg-light-secondary text-secondary; }
+  .button-light-warning { @apply bg-light-warning text-warning; }
+  .button-light-danger { @apply bg-light-danger text-danger; }
+  .button-light-success { @apply bg-light-success text-success; }
+
+  .button-simple-primary { @apply text-primary; }
+  .button-simple-secondary { @apply text-secondary; }
+  .button-simple-warning { @apply text-warning; }
+  .button-simple-danger { @apply text-danger; }
+  .button-simple-success { @apply text-success; }
+
+  /* ## Button size */
+  .button-lg { @apply px-14 py-3 flex items-center gap-3 rounded-sm; }
+  .button-md { @apply px-8 py-2 flex items-center gap-2 rounded-sm; }
+  .button-sm { @apply px-6 py-2 text-xs flex items-center gap-2 rounded-sm; }
+  .button-xs { @apply px-3 py-1 text-xs flex items-center gap-1.5 rounded-xs; }
+
+  /* ## Icon button size */
+  .icon-button-lg { @apply w-10 h-10 flex items-center justify-center rounded-sm; }
+  .icon-button-md { @apply w-8 h-8 flex items-center justify-center rounded-sm; }
+  .icon-button-sm { @apply w-7 h-7 text-xs flex items-center justify-center rounded-sm; }
+  .icon-button-xs { @apply w-6 h-6 text-xs flex items-center justify-center rounded-xs; }
+
+  /* ## Button loading size */
+  .button-lg .button-loading, .icon-button-lg .button-loading { @apply w-5 h-5; }
+  .button-md .button-loading, .icon-button-md .button-loading { @apply w-4 h-4; }
+  .button-sm .button-loading, .icon-button-sm .button-loading { @apply w-3 h-3; }
+  .button-xs .button-loading, .icon-button-xs .button-loading { @apply w-3 h-3; }
+
+  /* ## Button icon size */
+  .button-lg .button-icon, .icon-button-lg .button-icon { @apply text-xl mb-0.5; }
+  .button-md .button-icon, .icon-button-md .button-icon { @apply text-base mb-0.5; }
+  .button-sm .button-icon, .icon-button-sm .button-icon { @apply text-sm mb-0.5; }
+  .button-xs .button-icon, .icon-button-xs .button-icon { @apply text-xs mb-0; }
+
+
+  /* ============================ */
+  /* ## Input                     */
+  /* ============================ */
+  .input {
+    @apply px-4 py-2 rounded-[6px] text-foreground bg-background w-full transition duration-150 ease-in-out focus:outline-none border placeholder:font-normal placeholder:text-light-foreground focus:!border-primary disabled:opacity-60;
+  }
+
+  .input-file {
+    @apply file:-mx-3 file:-my-1 file:cursor-pointer file:overflow-hidden file:rounded-md file:border-0 file:border-solid file:border-inherit file:[margin-inline-end:0.75rem] file:bg-slate-200 file:px-3 file:py-1 file:text-slate-500;
+  }
+
+  .input-label {
+    @apply select-none text-sm text-foreground;
+  }
+
+  .input-error {
+    @apply !border-light-danger bg-light-danger/20;
+  }
+
+  .input-icon {
+    @apply absolute top-1/2 -translate-y-1/2 text-light-foreground;
+  }
+
+  .input-error-message {
+    @apply text-xs text-danger;
+  }
+
+  .input-tip {
+    @apply text-xs text-light-foreground;
+  }
+
+  .input-suggest-container {
+    @apply py-2 rounded-lg absolute left-0 w-full bg-background shadow z-30 overflow-hidden ease-in-out max-h-[200px] overflow-y-auto;
+  }
+
+  .input-suggest {
+    @apply py-1 px-4 cursor-pointer w-full list-none text-foreground hover:text-primary;
+  }
+
+  .input-values-container {
+    @apply flex gap-2 flex-nowrap w-max;
+  }
+
+  .input-values-item {
+    @apply flex text-sm px-1 pl-2 justify-between bg-white text-foreground border items-center rounded-[4px];
+  }
+
+  .input-values-delete {
+    @apply text-xs cursor-pointer text-light-foreground pl-2 pr-1 py-1 hover:text-danger;
+  }
+
+  .input-values-dropdown {
+    @apply p-2 rounded-sm absolute left-0 w-full bg-background border-b border-x border-stroke z-30 overflow-hidden ease-in-out max-h-[200px] overflow-y-auto flex gap-2 flex-wrap;
+  }
+
+  .input-values-preview {
+    @apply absolute top-1/2 -translate-y-1/2 overflow-x-hidden py-1.5 w-max;
+  }
+
+  /* ## Extra Input states & layout */
+  .input-with-left-icon {
+    @apply pl-12;
+  }
+  .input-with-right-icon {
+    @apply pr-12;
+  }
+
+  .input-label-disabled {
+    @apply opacity-50;
+  }
+
+  .input-label-focus {
+    @apply text-primary;
+  }
+
+  .input-label-error {
+    @apply text-danger;
+  }
+
+  .input-tip-disabled {
+    @apply opacity-60;
+  }
+
+  .input-icon-left {
+    @apply left-4;
+  }
+  .input-icon-right {
+    @apply right-4;
+  }
+  .input-icon-disabled {
+    @apply opacity-60;
+  }
+  .input-icon-focus {
+    @apply text-primary;
+  }
+
+  .input-suggest-container {
+    @apply py-2 rounded-lg absolute left-0 w-full bg-background shadow z-30 overflow-hidden ease-in-out max-h-[200px] overflow-y-auto transition-all duration-150 origin-top;
+    @apply opacity-0 scale-y-0 -translate-y-1/2;
+  }
+  .input-suggest-container-active {
+    @apply opacity-100 scale-y-100 -translate-y-0;
+  }
+
+  .input-suggest-active {
+    @apply bg-light-primary text-primary;
+  }
+
+  .input-suggest {
+    @apply py-1 px-4 cursor-pointer w-full list-none text-foreground hover:text-primary hover:bg-light-primary;
+  }
+
+  /* ## Select specific layout */
+  .select-multiple-values {
+    @apply absolute top-1/2 -translate-y-1/2 overflow-x-auto py-1.5;
+  }
+  .select-multiple-values-left-icon {
+    @apply ml-[2.5rem];
+  }
+  .select-multiple-values-no-icon {
+    @apply ml-2;
+  }
+  .select-icon-dropdown {
+    @apply cursor-pointer hover:text-primary;
+  }
+  .select-suggest-check {
+    @apply mr-2 text-sm;
+  }
+
+  /* ## Input icon clear */
+  .input-icon-clear {
+    @apply right-12 cursor-pointer hover:text-danger;
+  }
+
+  /* ## Base input container */
+  .input-container {
+    @apply relative flex flex-col gap-y-0.5;
+  }
+
+  /* ## Input OTP */
+  .input-otp-box {
+    @apply pb-1;
+  }
+  .input-otp-box-focus {
+    @apply !border-primary;
+  }
+  .input-otp-digits-container {
+    @apply flex gap-2 justify-between;
+  }
+  .input-otp-cell {
+    @apply w-8 h-full pb-1 text-center border-b outline-none border-foreground focus:!border-primary placeholder:text-light-foreground;
+  }
+
+  /* ## Input Password Strength */
+  .password-strength-bar {
+    @apply h-1 rounded transition-all duration-300 w-1/3;
+  }
+  .password-strength-bar-weak {
+    @apply bg-danger;
+  }
+  .password-strength-bar-strong {
+    @apply bg-warning;
+  }
+  .password-strength-bar-excellent {
+    @apply bg-success;
+  }
+  .password-strength-bar-empty {
+    @apply bg-background;
+  }
+  
+  .password-strength-text {
+    @apply text-[10px] font-medium;
+  }
+  .password-strength-text-weak {
+    @apply text-danger;
+  }
+  .password-strength-text-strong {
+    @apply text-warning;
+  }
+  .password-strength-text-excellent {
+    @apply text-success;
+  }
+
+  .input-password-confirm-wrapper {
+    @apply mt-4;
+  }
+
+  /* ## Input Number Sort Icons */
+  .input-number-sort-container {
+    @apply flex flex-col;
+  }
+  .input-number-sort-up {
+    @apply text-light-foreground hover:text-primary -mb-1;
+  }
+  .input-number-sort-down {
+    @apply text-light-foreground hover:text-primary -mt-1;
+  }
+
+  /* ##Input Date & Time Popovers */
+  .input-date-picker-popover {
+    @apply w-max h-72 bg-background border border-stroke p-2 rounded-[6px] absolute top-full right-0 mt-1 z-50;
+  }
+  .input-datetime-picker-popover {
+    @apply absolute z-50 top-full right-0 mt-1 w-max bg-background border border-stroke rounded-[6px] p-2 shadow min-w-[350px];
+  }
+  .input-time-picker-popover {
+    @apply absolute z-50 top-full right-0 mt-1 w-max bg-background border border-stroke rounded-[6px] p-2 shadow min-w-[300px];
+  }
+
+  /* ## Input Map */
+  .input-map-suggest-container {
+    @apply absolute top-full left-0 mt-2 w-full z-50 bg-background border border-stroke rounded-md overflow-hidden shadow-lg;
+  }
+  .input-map-badge-left {
+    @apply absolute top-3 left-3 bg-background px-3 py-2 rounded-lg shadow;
+  }
+  .input-map-badge-right {
+    @apply absolute top-3 right-3 bg-background p-3 rounded-lg cursor-pointer shadow;
+  }
+  .input-map-marker {
+    @apply text-3xl text-primary drop-shadow-md transition-transform;
+  }
+  .input-map-marker-drag {
+    @apply scale-125 -translate-y-2;
+  }
+
+  /* ## Input Image */
+  .input-image-dropzone {
+    @apply border-2 border-dashed rounded-xl p-2 w-full bg-background cursor-pointer overflow-hidden border-stroke;
+  }
+  .input-image-dropzone-drag {
+    @apply border-primary;
+  }
+  .input-image-dropzone-error {
+    @apply border-danger;
+  }
+  .input-image-dropzone-content {
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center text-light-foreground;
+  }
+  .input-image-dropzone-text {
+    @apply text-xs text-center mt-4;
+  }
+  .input-image-cropper-wrapper {
+    @apply relative bg-background rounded-lg overflow-hidden mx-auto;
+  }
+  .input-image-cropper-grid-container {
+    @apply absolute top-0 left-0 pointer-events-none;
+  }
+  .input-image-cropper-grid-border {
+    @apply absolute inset-0 border-2 border-stroke;
+  }
+  .input-image-cropper-grid-line-h {
+    @apply absolute left-0 w-full border-t border-stroke;
+  }
+  .input-image-cropper-grid-line-h-1 {
+    @apply top-1/3;
+  }
+  .input-image-cropper-grid-line-h-2 {
+    @apply top-2/3;
+  }
+  .input-image-cropper-grid-line-v {
+    @apply absolute top-0 h-full border-l border-stroke;
+  }
+  .input-image-cropper-grid-line-v-1 {
+    @apply left-1/3;
+  }
+  .input-image-cropper-grid-line-v-2 {
+    @apply left-2/3;
+  }
+
+  /* ## Input Document */
+  .input-document-value-item {
+    @apply border rounded-sm pl-2 pr-1 py-1 text-xs bg-light-primary/30 border-light-primary text-primary flex items-center gap-1 max-w-[150px] border-dashed cursor-pointer hover:bg-light-primary/50;
+  }
+  .input-document-dropzone {
+    @apply border rounded border-dashed border-stroke p-3 bg-background h-[350px] md:h-[600px] flex justify-center items-center;
+  }
+  .input-document-preview-box {
+    @apply relative w-full aspect-square flex justify-center bg-background items-center cursor-pointer;
+  }
+  .input-document-upload-box {
+    @apply w-full aspect-square flex flex-col gap-2 justify-center items-center border border-dashed border-stroke cursor-pointer text-light-foreground;
+  }
+  .input-document-values {
+    @apply absolute top-1/2 -translate-y-1/2 overflow-x-hidden py-1.5 w-max flex gap-2 overflow-hidden cursor-pointer;
+  }
+  .input-document-values-left-icon {
+    @apply ml-[2.5rem];
+  }
+  .input-document-values-no-icon {
+    @apply ml-2;
+  }
+  .input-document-empty-box {
+    @apply w-full h-full flex flex-col gap-6 justify-center items-center cursor-pointer text-light-foreground;
+  }
+  .input-document-thumbs-container {
+    @apply max-h-[calc(100vh-650px)] md:max-h-[calc(100vh-750px)] overflow-y-auto;
+  }
+  .input-document-thumbs-grid {
+    @apply grid grid-cols-5 gap-1;
+  }
+  .input-document-thumb-wrapper {
+    @apply relative w-full aspect-square flex justify-center bg-background items-center cursor-pointer brightness-70 hover:brightness-90;
+  }
+  .input-document-thumb-wrapper-active {
+    @apply brightness-100;
+  }
+
+
+  /* ============================ */
+  /* ## Radio & Checkbox          */
+  /* ============================ */
+  .input-radio-list, .input-checkbox-list {
+    @apply overflow-auto w-full flex flex-nowrap gap-y-2 gap-4;
+  }
+  .input-radio-list-vertical, .input-checkbox-list-vertical {
+    @apply flex-col flex-wrap;
+  }
+
+  .radio-container, .checkbox-container {
+    @apply flex flex-col gap-1;
+  }
+  .radio-wrapper {
+    @apply flex gap-2 items-center cursor-pointer;
+  }
+  .checkbox-wrapper {
+    @apply flex gap-2 items-center cursor-pointer active:scale-x-[102%];
+  }
+  .radio-wrapper-disabled, .checkbox-wrapper-disabled {
+    @apply pointer-events-none opacity-60;
+  }
+
+  .radio-input {
+    @apply flex justify-center items-center rounded-full w-5 h-5 active:outline border border-light-foreground;
+  }
+  .radio-input-checked {
+    @apply border-[5px] outline-light-primary border-primary;
+  }
+
+  .checkbox-input {
+    @apply flex justify-center items-center rounded-md border w-6 h-6 transition-colors border-light-foreground text-light-foreground;
+  }
+  .checkbox-input-checked {
+    @apply border-light-primary bg-primary text-background;
+  }
+
+  .radio-label, .checkbox-label {
+    @apply whitespace-nowrap;
+  }
+  .radio-label-checked, .checkbox-label-checked {
+    @apply font-semibold;
+  }
+
+  .input-scroll {
+    overflow: auto;
+  }
+
+  .input-scroll::-webkit-scrollbar,
+  .input-values-preview::-webkit-scrollbar,
+  .select-multiple-values::-webkit-scrollbar,
+  .input-document-values::-webkit-scrollbar,
+  .input-radio-list::-webkit-scrollbar,
+  .input-checkbox-list::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  .input-scroll:hover::-webkit-scrollbar,
+  .input-values-preview:hover::-webkit-scrollbar,
+  .select-multiple-values:hover::-webkit-scrollbar,
+  .input-document-values:hover::-webkit-scrollbar,
+  .input-radio-list:hover::-webkit-scrollbar,
+  .input-checkbox-list:hover::-webkit-scrollbar {
+    display: block;
+  }
+
+  .input-scroll::-webkit-scrollbar-track,
+  .input-values-preview::-webkit-scrollbar-track,
+  .select-multiple-values::-webkit-scrollbar-track,
+  .input-document-values::-webkit-scrollbar-track,
+  .input-radio-list::-webkit-scrollbar-track,
+  .input-checkbox-list::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .input-scroll::-webkit-scrollbar-thumb,
+  .input-values-preview::-webkit-scrollbar-thumb,
+  .select-multiple-values::-webkit-scrollbar-thumb,
+  .input-document-values::-webkit-scrollbar-thumb,
+  .input-radio-list::-webkit-scrollbar-thumb,
+  .input-checkbox-list::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 10px;
+  }
+
+  .input-scroll::-webkit-scrollbar-thumb:hover,
+  .input-values-preview::-webkit-scrollbar-thumb:hover,
+  .select-multiple-values::-webkit-scrollbar-thumb:hover,
+  .input-document-values::-webkit-scrollbar-thumb:hover,
+  .input-radio-list::-webkit-scrollbar-thumb:hover,
+  .input-checkbox-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  /* ============================ */
+  /* ## Modal                     */
+  /* ============================ */
+  .modal {
+    @apply isolate fixed left-1/2 -translate-x-1/2 top-[1rem] md:top-[15vh] opacity-100 bg-white z-40 w-[calc(100vw-2rem)] md:w-[50vw] max-w-[500px];
+  }
+
+  .modal-confirm {
+    @apply rounded-[4px] border-t-4 !border-primary max-w-[300px];
+  }
+
+  .modal-header {
+    @apply flex justify-between items-center gap-8 px-4 pt-4;
+  }
+
+  .modal-title {
+    @apply text-lg font-semibold text-foreground;
+  }
+
+  .modal-tip {
+    @apply text-sm text-light-foreground leading-4 mt-1;
+  }
+
+  .modal-footer {
+    @apply px-4 py-2.5 mt-4 bg-background rounded-b-[6px];
+  }
+
+  .floating-page {
+    @apply fixed top-[1rem] right-0 bg-background lg:top-0 h-screen z-40 border-t-4 md:border-t-0 md:border-l-4 !border-primary overflow-hidden overflow-y-auto w-[100vw] md:w-[50vw] max-w-[700px];
+  }
+
+  .modal-backdrop {
+    @apply isolate fixed left-0 top-0 z-40 w-screen h-screen bg-light-foreground/20 backdrop-blur-[1px];
+  }
+
+  .toast {
+    @apply isolate fixed right-5 bottom-5 opacity-100 bg-white z-40 border-t-4 !border-primary rounded-[6px] w-[calc(100vw-2rem)] md:w-[50vw] max-w-[300px];
+  }
+
+  .bottom-sheet {
+    @apply fixed left-0 right-0 w-full h-full z-50 transition-[top] duration-75;
+  }
+
+  .bottom-sheet-container {
+    @apply w-full h-full bg-white rounded-t shadow-xl overflow-hidden;
+  }
+
+  .bottom-sheet-handle-wrapper {
+    @apply py-2 flex justify-center cursor-grab;
+  }
+
+  .bottom-sheet-handle {
+    @apply w-14 h-[2.5px] bg-slate-200 rounded-full;
+  }
+
+  .bottom-sheet-footer {
+    @apply fixed bottom-0 left-0 right-0 z-50;
+  }
+
+
+  /* ============================ */
+  /* ## Accordion                 */
+  /* ============================ */
+  .accordion {
+    @apply bg-background border border-stroke rounded-lg flex;
+  }
+  .accordion-horizontal {
+    @apply flex-row w-min border-r-0;
+  }
+  .accordion-vertical {
+    @apply flex-col border-b-0;
+  }
+
+  .accordion-head {
+    @apply flex justify-between items-center gap-4 font-semibold cursor-pointer;
+  }
+  .accordion-head-horizontal {
+    @apply flex-col px-2 py-4;
+  }
+  .accordion-head-vertical {
+    @apply py-2 px-4;
+  }
+
+  .accordion-item {
+    @apply border-stroke;
+  }
+  .accordion-item-horizontal {
+    @apply border-r flex;
+  }
+  .accordion-item-vertical {
+    @apply border-b;
+  }
+
+  .accordion-content {
+    @apply transition-all overflow-hidden;
+  }
+  .accordion-content-horizontal-active {
+    @apply max-w-max pr-4 py-2;
+  }
+  .accordion-content-horizontal-inactive {
+    @apply max-w-0 px-0;
+  }
+  .accordion-content-vertical-active {
+    @apply max-h-max pb-4 px-4;
+  }
+  .accordion-content-vertical-inactive {
+    @apply max-h-0 pb-0 px-4;
+  }
+
+
+  /* ============================ */
+  /* ## Breadcrumb                */
+  /* ============================ */
+  .breadcrumb {
+    @apply w-full overflow-x-auto overflow-y-hidden whitespace-nowrap;
+  }
+  .breadcrumb-list {
+    @apply flex items-center;
+  }
+  .breadcrumb-link {
+    @apply capitalize;
+  }
+  .breadcrumb-link-square {
+    @apply py-2 px-4 rounded-[6px] bg-light-foreground/10;
+  }
+  .breadcrumb-link-active {
+    @apply text-primary;
+  }
+  .breadcrumb-link-square-active {
+    @apply text-primary bg-primary/10;
+  }
+  .breadcrumb-separator {
+    @apply mx-2 text-light-foreground flex items-center;
+  }
+
+
+  /* ============================ */
+  /* ## Card                      */
+  /* ============================ */
+  .card {
+    @apply px-4 py-2.5 rounded-[6px] border bg-white;
+  }
+
+  /* ## Alert Card */
+  .alert-card {
+    @apply rounded-[6px] bg-white p-4 border sm:p-6;
+  }
+  .alert-card-badge {
+    @apply rounded-[4px] border text-primary bg-primary/20 px-3 py-1.5 text-xs font-bold;
+  }
+  .alert-card-title {
+    @apply mt-4 text-lg font-medium sm:text-xl;
+  }
+
+  /* ## Dashboard Card */
+  .dashboard-card {
+    @apply bg-white border py-4 px-6 rounded-[6px] flex justify-between gap-4 items-center;
+  }
+
+  /* ## Gallery Card */
+  .gallery-card-image {
+    @apply w-full rounded-bl-4xl rounded-tr-3xl object-cover aspect-[4/3];
+  }
+  .gallery-card-label {
+    @apply mt-1 text-center text-sm text-light-foreground;
+  }
+
+  /* ## Product Card */
+  .product-card {
+    @apply rounded-[6px] border p-2 bg-white;
+  }
+  .product-card-image {
+    @apply h-56 w-full rounded-[4px] object-cover;
+  }
+
+  /* ## Profile Card */
+  .profile-card {
+    @apply relative block overflow-hidden rounded-[6px] border bg-white p-4 sm:p-6;
+  }
+  .profile-card-image {
+    @apply size-16 rounded-full object-cover shadow-sm;
+  }
+
+
+  /* ============================ */
+  /* ## Carousel                  */
+  /* ============================ */
+  .carousel {
+    @apply relative w-full overflow-hidden rounded-[6px];
+  }
+  .carousel-inner {
+    @apply flex transition-transform duration-500;
+  }
+  .carousel-item {
+    @apply flex-shrink-0 w-full aspect-[16/6] flex items-center justify-center bg-cover bg-center;
+  }
+  .carousel-btn {
+    @apply absolute top-1/2 transform -translate-y-1/2 bg-light-foreground/40 text-white p-2 rounded-[6px] cursor-pointer;
+  }
+  .carousel-prev-btn {
+    @apply left-4;
+  }
+  .carousel-next-btn {
+    @apply right-4;
+  }
+  .carousel-navigation {
+    @apply absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2;
+  }
+  .carousel-indicator {
+    @apply w-8 h-1 rounded-full bg-light-foreground/40;
+  }
+  .carousel-indicator-active {
+    @apply bg-primary;
+  }
+
+
+  /* ============================ */
+  /* ## Chip                      */
+  /* ============================ */
+  .chip-group {
+    @apply overflow-hidden flex gap-2 flex-wrap;
+  }
+  .chip {
+    @apply flex text-xs py-0.5 px-2 justify-between text-foreground border items-center rounded-md cursor-pointer;
+  }
+  .chip-delete {
+    @apply text-xs cursor-pointer text-light-foreground pl-2 py-1 hover:text-danger;
+  }
+
+
+  /* ============================ */
+  /* ## Typography                */
+  /* ============================ */
+  /* ## Article */
+  .typography-article-header {
+    @apply text-light-foreground;
+  }
+  .typography-article-title {
+    @apply text-2xl font-bold mt-2;
+  }
+  .typography-article-content {
+    @apply text-justify mt-2;
+  }
+  .typography-article-footer {
+    @apply text-sm text-light-foreground mt-4;
+  }
+
+  /* ## Column */
+  .typography-column-title {
+    @apply text-xs font-semibold text-light-foreground;
+  }
+
+  /* ## Content */
+  .typography-content-title {
+    @apply font-semibold;
+  }
+  .typography-content-body {
+    @apply text-sm text-light-foreground;
+  }
+
+  /* ## Tips */
+  .typography-tips {
+    @apply pl-3 py-1 border-l-2 border-light-primary;
+  }
+  .typography-tips-title {
+    @apply font-semibold;
+  }
+  .typography-tips-body {
+    @apply text-sm text-light-foreground;
+  }
+
+  /* ============================ */
+  /* ## Table Control Bar         */
+  /* ============================ */
+  .control-bar {
+    @apply py-1 md:py-2 md:px-1.5 bg-white rounded-[6px] border border-stroke flex items-center mb-2;
+  }
+  .control-bar-create-wrapper {
+    @apply pl-1.5 pr-3 mr-2 border-r border-stroke;
+  }
+  .control-bar-search-wrapper {
+    @apply w-full min-w-[150px];
+  }
+  .control-bar-search-wrapper-searchable {
+    @apply pr-1.5;
+  }
+  .control-bar-search-wrapper-standalone {
+    @apply px-1.5;
+  }
+  .control-bar-search-input {
+    @apply py-1.5 text-sm;
+  }
+  .control-bar-search-input-searchable {
+    @apply rounded-l-none;
+  }
+  .control-bar-searchable-wrapper {
+    @apply w-28 pl-1.5;
+  }
+  .control-bar-searchable-select {
+    @apply py-1.5 text-sm rounded-r-none border-r-0;
+  }
+  .control-bar-button-wrapper {
+    @apply px-1.5 rounded-md relative;
+  }
+  .control-bar-button-wrapper-refresh {
+    @apply md:px-1.5 relative;
+  }
+  .control-bar-icon-button {
+    @apply !text-foreground p-4;
+  }
+  .control-bar-filter-button {
+    @apply !text-foreground;
+  }
+  .control-bar-dropdown {
+    @apply absolute -bottom-4 bg-white translate-y-full right-0 w-[240px] z-20 rounded-lg border border-stroke transition-all duration-200;
+  }
+  .control-bar-dropdown-hidden {
+    @apply scale-y-0 top-0 opacity-0 pointer-events-none;
+  }
+  .control-bar-dropdown-title {
+    @apply select-none text-foreground text-xs p-4;
+  }
+  .control-bar-selectable-checkbox-list {
+    @apply px-4 border-0 gap-4 mb-4;
+  }
+  .control-bar-selectable-checkbox {
+    @apply w-5 h-5;
+  }
+  .control-bar-sort-list {
+    @apply flex flex-col mb-4;
+  }
+  .control-bar-sort-item {
+    @apply flex justify-between cursor-pointer text-sm px-4 py-2 hover:bg-light-primary;
+  }
+  .control-bar-sort-item-active {
+    @apply text-primary bg-primary/10;
+  }
+  .control-bar-sort-active-icon {
+    @apply text-primary;
+  }
+  .control-bar-sort-icon {
+    @apply text-xs;
+  }
+  .control-bar-sort-badge {
+    @apply text-[9px] ml-1;
+  }
+  .control-bar-filter-panel {
+    @apply mb-2 animate-intro-down;
+  }
+  .control-bar-filter-panel-hidden {
+    @apply p-0 h-0 hidden overflow-hidden;
+  }
+  .control-bar-mobile-container {
+    @apply flex flex-col gap-4 p-2;
+  }
+  .control-bar-mobile-title {
+    @apply select-none text-foreground text-xs pb-2;
+  }
+  .control-bar-mobile-checkbox-list {
+    @apply px-2 border-0 gap-4 bg-transparent;
+  }
+  .control-bar-mobile-sort-item {
+    @apply flex justify-between cursor-pointer text-sm p-2 hover:bg-light-primary active:scale-x-[102%];
+  }
+  .control-bar-mobile-sort-item-active {
+    @apply text-primary bg-primary/10;
+  }
+  .control-bar-mobile-filter {
+    @apply border-0 p-0 mb-2;
+  }
+
+  /* ============================ */
+  /* ## Table                     */
+  /* ============================ */
+  .table-head-row {
+    @apply flex gap-4;
+  }
+  .table-head-column {
+    @apply px-4 py-2.5 font-bold w-full flex justify-between gap-2 items-center text-sm text-foreground capitalize;
+  }
+  .table-body-column {
+    @apply px-4 py-4 font-medium;
+  }
+  .table-body-row {
+    @apply flex items-center gap-4 rounded-[4px] relative opacity-0 animate-intro-fade border-b hover:bg-light-primary/30;
+  }
+  .table-body {
+    @apply flex flex-col gap-y-0.5;
+  }
+  .table-action-column {
+    @apply flex-1 flex justify-end gap-2 px-4 py-2;
+  }
+  .table-floating-action {
+    @apply sticky bg-background -right-5 z-30 cursor-pointer flex items-center shadow rounded-l-lg;
+  }
+  .table-floating-action-icon-wrapper {
+    @apply pl-4 pr-7 py-2;
+  }
+  .table-floating-action-content {
+    @apply py-1 flex gap-2 w-0 overflow-hidden transition-all duration-200;
+  }
+  .table-floating-action-content-active {
+    @apply w-max pl-2 pr-8;
+  }
+  .table-loading-container {
+    @apply flex flex-col items-center justify-center gap-8 p-20;
+  }
+  .table-loading-text {
+    @apply text-lg text-light-foreground animate-pulse;
+  }
+  .table-empty-container {
+    @apply flex flex-col items-center justify-center gap-8 p-20 opacity-50;
+  }
+  .table-empty-text {
+    @apply text-lg text-light-foreground;
+  }
+  .table-mobile-list {
+    @apply w-full flex flex-col gap-y-2;
+  }
+  .table-bulk-actions-bar {
+    @apply rounded-[6px] bg-white mt-4 w-full px-4 py-2 border border-stroke flex justify-between items-center;
+  }
+  .table-bulk-actions-title {
+    @apply text-sm font-semibold;
+  }
+  .table-bulk-actions-buttons {
+    @apply flex justify-end items-center gap-2;
+  }
+  .table-pagination-desktop {
+    @apply mt-6 mb-24 md:mb-0 hidden md:block;
+  }
+  .table-pagination-mobile {
+    @apply mt-6 mb-10 md:hidden;
+  }
+
+  /* ============================ */
+  /* ## Table Filter Component    */
+  /* ============================ */
+  .filter-panel {
+    @apply p-4 border border-stroke rounded-sm;
+  }
+  .filter-panel-header {
+    @apply flex justify-between items-center mb-4;
+  }
+  .filter-panel-controls {
+    @apply flex gap-4 items-center;
+  }
+  .filter-panel-bookmarks-wrapper {
+    @apply flex gap-2 items-center;
+  }
+  .filter-panel-bookmark-btn {
+    @apply text-slate-400;
+  }
+  .filter-row {
+    @apply flex flex-wrap items-center gap-2 mb-2;
+  }
+  .filter-col-logic {
+    @apply w-[20%] md:w-[10%];
+  }
+  .filter-col-column {
+    @apply w-[52.5%] md:w-[30.7%];
+  }
+  .filter-col-column-with-logic {
+    @apply w-[30%] md:w-[20%];
+  }
+  .filter-col-operator {
+    @apply w-[35%] md:w-[18%];
+  }
+  .filter-col-value {
+    @apply w-full md:w-[45%];
+  }
+  .filter-input-field {
+    @apply text-sm p-2 px-3;
+  }
+  .filter-add-btn {
+    @apply md:mt-4;
+  }
+  .filter-bookmark-list-container {
+    @apply p-4 flex flex-col gap-2;
+  }
+  .filter-bookmark-row {
+    @apply p-2 border border-stroke rounded-sm flex justify-between;
+  }
+  .filter-bookmark-name {
+    @apply pl-1;
+  }
+  .filter-bookmark-empty-text {
+    @apply text-center text-light-foreground py-4;
+  }
+  .filter-bookmark-form-container {
+    @apply p-4;
+  }
+  .filter-bookmark-form-input {
+    @apply mt-4;
+  }
+  .filter-between-container {
+    @apply flex items-center gap-2 flex-1;
+  }
+
+  /* ============================ */
+  /* ## Table Pagination          */
+  /* ============================ */
+  .pagination-container {
+    @apply flex items-center justify-end md:justify-between gap-4 md:gap-6;
+  }
+  .pagination-item {
+    @apply w-8 md:w-12 h-8 text-sm flex justify-center items-center bg-white rounded-[4px] border border-stroke cursor-pointer;
+  }
+  .pagination-item-active {
+    @apply bg-light-primary/50 text-primary;
+  }
+  .pagination-overflow {
+    @apply py-1.5 px-2 text-foreground text-sm;
+  }
+  .pagination-desktop-wrapper {
+    @apply hidden md:flex items-center gap-6;
+  }
+  .pagination-paginate-select {
+    @apply py-1.5 text-sm bg-white rounded-[4px];
+  }
+  .pagination-desktop-pages {
+    @apply flex items-center gap-2 mt-0.5;
+  }
+  .pagination-desktop-info {
+    @apply hidden md:block text-sm text-foreground;
+  }
+  .pagination-mobile-wrapper {
+    @apply border border-stroke rounded-sm flex md:hidden items-center;
+  }
+  .pagination-mobile-info {
+    @apply text-sm text-foreground px-4 py-2;
+  }
+  .pagination-mobile-controls {
+    @apply flex items-center gap-2 bg-light-primary/50 text-primary p-2;
+  }
+
+
+  /* ============================ */
+  /* ## Table Supervision         */
+  /* ============================ */
+  .table-supervision-action-list {
+    @apply flex items-center gap-2;
+  }
+  .table-supervision-detail-container {
+    @apply p-4;
+  }
+  .table-supervision-detail-body {
+    @apply flex flex-col gap-y-4;
+  }
+  .table-supervision-title {
+    @apply text-lg lg:text-xl font-bold mb-2 lg:mb-4;
+  }
+  .table-supervision-control-button {
+    @apply !text-foreground;
+  }
+  .table-supervision-mobile-add-btn {
+    @apply fixed bottom-2 left-2 w-12 h-12 md:hidden;
+  }
+  .table-supervision-modal {
+    @apply bg-background;
+  }
+  .table-supervision-form-mobile-container {
+    @apply p-4 h-[110vh];
+  }
+  .table-supervision-form-container {
+    @apply p-4;
+  }
+  .table-supervision-large-modal {
+    @apply bg-background md:w-[1200px] max-w-[1200px];
+  }
+  .table-supervision-confirm-text {
+    @apply px-2 pb-2 text-sm text-center;
+  }
+  .table-supervision-confirm-item-name {
+    @apply font-semibold;
+  }
+
+  /* ============================ */
+  /* ## Form Supervision          */
+  /* ============================ */
+  .form-supervision-title {
+    @apply text-lg font-semibold mb-4;
+  }
+  .form-supervision-base {
+    @apply grid grid-cols-12 gap-4;
+  }
+  .form-supervision-cluster-item {
+    @apply relative pr-8;
+  }
+  .form-supervision-cluster-item-wrapped {
+    @apply p-4 rounded border;
+  }
+  .form-supervision-cluster-grid {
+    @apply w-full grid grid-cols-12 gap-4;
+  }
+  .form-supervision-cluster-remove-btn {
+    @apply absolute top-10 right-2 translate-x-1/2 -translate-y-1/2;
+  }
+  .form-supervision-cluster-remove-btn-wrapped {
+    @apply translate-x-0 -translate-y-0 top-1 right-1;
+  }
+  .form-supervision-footer {
+    @apply flex justify-end mt-4;
+  }
+  .form-supervision-confirm-text {
+    @apply px-2 pb-2 text-sm text-center;
+  }
+  .form-supervision-toast-error {
+    @apply !border-danger;
+  }
+  .form-supervision-toast-success {
+    @apply !border-success;
+  }
+  .form-supervision-toast-text {
+    @apply px-3 pb-2 text-sm;
+  }
+
+  /* ============================ */
+  /* ## Sidebar                   */
+  /* ============================ */
+  .sidebar-backdrop {
+    @apply absolute top-0 left-0 w-full h-full bg-background/50 blur-md z-20 md:hidden;
+  }
+  .sidebar-base {
+    @apply flex flex-col fixed w-full sm:w-64 h-screen px-2 py-4 overflow-y-auto bg-white z-20 rounded-r-[8px] border-r;
+  }
+  .sidebar-head-item {
+    @apply flex justify-between items-center text-light-foreground font-semibold py-2 text-xs uppercase;
+  }
+  .sidebar-item {
+    @apply flex items-center justify-between px-2 py-2 gap-2 transition-colors duration-300 transform hover:text-primary cursor-pointer transition-none;
+  }
+  .sidebar-item-active {
+    @apply text-primary border-l-2 border-primary pl-4;
+  }
+  .sidebar-child-item {
+    @apply flex items-center justify-between px-2 py-2 gap-2 transition-colors duration-300 transform hover:text-primary cursor-pointer transition-none border-l-2;
+  }
+  .sidebar-child-item-active {
+    @apply text-primary border-primary pl-4;
+  }
+  .sidebar-main-content {
+    @apply w-full md:ml-[256px] md:w-[calc(100vw-256px)] min-h-screen overflow-x-hidden;
+  }
+
+  /* ============================ */
+  /* ## Bottombar                 */
+  /* ============================ */
+  .bottombar-base {
+    @apply fixed left-1/2 -translate-x-1/2 w-[96%] max-w-[400px] p-2 px-4 bg-white border rounded-[6px] z-40;
+  }
+  .bottombar-item {
+    @apply flex justify-center items-center flex-col py-3 rounded-[6px];
+  }
+  .bottombar-item-active {
+    @apply border-b bg-background text-primary;
+  }
+
+  /* ============================ */
+  /* ## Navbar                    */
+  /* ============================ */
+  .navbar-topbar {
+    @apply relative py-2.5 bg-background rounded-[6px] z-40 hidden lg:block;
+  }
+  .navbar-container {
+    @apply container flex items-center justify-between px-4 mx-auto;
+  }
+  .navbar-special-link {
+    @apply font-medium text-primary ml-2;
+  }
+  .navbar-menu {
+    @apply flex gap-12;
+  }
+  .navbar-menu-item-sm {
+    @apply px-4 text-sm text-gray-500 hover:text-foreground;
+  }
+  .navbar-menu-item-base {
+    @apply px-4 text-base text-gray-500 hover:text-foreground;
+  }
+  .navbar-main {
+    @apply bg-white border-y sticky top-0 z-40;
+  }
+  .navbar-main-container {
+    @apply container flex items-center justify-between px-4 py-2.5 gap-8 mx-auto relative;
+  }
+  .navbar-logo-title {
+    @apply text-lg font-extrabold italic whitespace-nowrap;
+  }
+  .navbar-logo-subtitle {
+    @apply text-xs -mt-1 font-semibold text-light-foreground;
+  }
+  .navbar-auth-buttons {
+    @apply flex w-full gap-4 justify-end;
+  }
+
+  /* ============================ */
+  /* ## Headbar                   */
+  /* ============================ */
+  .headbar-base {
+    @apply p-1 flex items-center justify-between bg-white rounded-[6px] relative z-30 select-none border px-4 py-2;
+  }
+  .headbar-right-controls {
+    @apply flex gap-2 w-max items-center;
+  }
+  .headbar-icon-button {
+    @apply p-2 text-light-foreground hover:text-foreground cursor-pointer;
+  }
+  .headbar-divider {
+    @apply h-5 w-[1px] bg-foreground mx-2.5;
+  }
+  .headbar-user-profile-trigger {
+    @apply flex items-center gap-2.5 px-4 cursor-pointer -ml-2 text-light-foreground hover:text-foreground;
+  }
+  .headbar-user-avatar-wrapper {
+    @apply h-10 bg-background rounded-full aspect-square overflow-hidden flex justify-center items-center;
+  }
+  .headbar-user-info {
+    @apply hidden lg:block w-max max-w-[110px];
+  }
+  .headbar-user-name {
+    @apply text-sm font-semibold line-clamp-1;
+  }
+  .headbar-user-role {
+    @apply -mt-0.5 text-xs font-medium line-clamp-1;
+  }
+  .headbar-dropdown {
+    @apply absolute right-0 top-[70px] rounded-[6px] border overflow-hidden bg-white z-30 transition-transform origin-top;
+  }
+  .headbar-dropdown-header {
+    @apply flex items-center gap-4 p-4 rounded-b-[4px] border-b;
+  }
+  .headbar-dropdown-avatar-wrapper {
+    @apply h-14 bg-background border rounded-full aspect-square overflow-hidden flex justify-center items-center;
+  }
+  .headbar-dropdown-user-info {
+    @apply pr-5 w-[160px];
+  }
+  .headbar-dropdown-body {
+    @apply py-4;
+  }
+  .headbar-dropdown-item {
+    @apply px-6 py-2 flex gap-4 hover:bg-background/40 hover:border-y items-center cursor-pointer;
+  }
+  .headbar-dropdown-item-danger {
+    @apply px-6 py-2 flex gap-4 hover:bg-background/40 hover:border-y items-center cursor-pointer text-danger;
+  }
+
+  /* ============================ */
+  /* ## Footer                    */
+  /* ============================ */
+  .footer-base {
+    @apply bg-white/50 backdrop-blur-md border-t-2 pt-[100px] pb-16;
+  }
+  .footer-brand-container {
+    @apply container mx-auto px-4 lg:px-52 text-center;
+  }
+  .footer-brand-title {
+    @apply text-4xl font-extrabold italic whitespace-nowrap;
+  }
+  .footer-brand-subtitle {
+    @apply text-lg font-semibold text-light-foreground;
+  }
+  .footer-contact-container {
+    @apply flex flex-col justify-center items-center mt-16 gap-4 px-4;
+  }
+  .footer-contact-link {
+    @apply font-medium cursor-pointer hover:border-b border-foreground;
+  }
+  .footer-support-hours {
+    @apply font-medium text-center;
+  }
+  .footer-socials-container {
+    @apply flex mt-10 gap-4 justify-center;
+  }
+  .footer-social-icon {
+    @apply text-2xl hover:scale-110;
+  }
+  .footer-links-container {
+    @apply container mx-auto px-6 bg-white border-y mt-20;
+  }
+  .footer-links-grid {
+    @apply grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-4 py-12 px-12;
+  }
+  .footer-menu-title {
+    @apply text-lg font-semibold text-foreground mb-4;
+  }
+  .footer-menu-list {
+    @apply flex flex-col gap-2;
+  }
+  .footer-menu-link {
+    @apply text-light-foreground hover:underline;
+  }
+  .footer-copyright {
+    @apply text-lg text-center font-semibold mt-16;
+  }
+
+  /* ============================ */
+  /* ## Tabbar                    */
+  /* ============================ */
+  .tabbar-base {
+    @apply grid grid-flow-col rounded-[6px] border;
+  }
+  .tabbar-item {
+    @apply text-center px-2 py-2 rounded-[64px];
+  }
+  .tabbar-item-active {
+    @apply bg-white/60 text-primary font-semibold;
+  }
+  .tabbar-item-inactive {
+    @apply hover:bg-white/60 cursor-pointer;
+  }
+
+  /* ============================ */
+  /* ## Wizard                    */
+  /* ============================ */
+  .wizard-step-header {
+    @apply relative mb-2;
+  }
+  .wizard-progress-bar-wrapper {
+    @apply absolute flex items-center;
+  }
+  .wizard-progress-bar-bg {
+    @apply w-full bg-light-primary rounded flex-1;
+  }
+  .wizard-progress-bar-fill {
+    @apply py-1 rounded w-full;
+  }
+  .wizard-progress-bar-fill-active {
+    @apply bg-primary;
+  }
+  .wizard-progress-bar-fill-gradient {
+    @apply bg-gradient-to-r from-primary to-light-primary to-70%;
+  }
+  .wizard-circle {
+    @apply w-10 h-10 mx-auto rounded-full text-lg font-bold flex items-center;
+  }
+  .wizard-circle-active {
+    @apply bg-primary text-background;
+  }
+  .wizard-circle-inactive {
+    @apply bg-light-primary text-white;
+  }
+  .wizard-label {
+    @apply text-xs text-center md:text-sm 2xl:text-base font-medium;
+  }
+
+  /* ============================ */
+  /* ## Scroll Container          */
+  /* ============================ */
+  .scroll-container-main {
+    @apply w-full overflow-x-auto;
+  }
+  .scroll-container-floating-bar {
+    @apply fixed bottom-0 py-1 bg-background w-full;
+  }
+  .scroll-container-floating-wrapper {
+    @apply overflow-x-auto overflow-y-hidden;
+  }
+  .scroll-container-phantom-element {
+    @apply h-0.5 opacity-0;
+  }
+
+  /* ============================ */
+  /* ## Swipe                     */
+  /* ============================ */
+  .swipe-container {
+    @apply relative w-full overflow-hidden select-none;
+  }
+  .swipe-left-action {
+    @apply absolute h-full left-0 w-1/2 flex items-center px-8 gap-2 bg-light-warning text-warning cursor-pointer transition-opacity;
+  }
+  .swipe-right-action {
+    @apply absolute h-full right-0 w-1/2 flex justify-end items-center px-8 gap-2 bg-light-danger text-danger cursor-pointer transition-opacity;
+  }
+  .swipe-content {
+    @apply relative z-10 bg-background;
+  }
+
+  /* ============================ */
+  /* ## Shortcut Provider         */
+  /* ============================ */
+  .shortcut-help-grid {
+    @apply p-4 grid grid-cols-2 gap-4;
+  }
+  .shortcut-key-badge {
+    @apply px-2 py-1 border rounded bg-gray-100 w-max;
+  }
+
+}
+
+
+

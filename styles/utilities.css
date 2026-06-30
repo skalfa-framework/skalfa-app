@@ -1,0 +1,37 @@
+@layer utilities {
+  /* ============================ */
+  /* ## Scroll style              */
+  /* ============================ */
+  body::-webkit-scrollbar,
+  .scroll::-webkit-scrollbar {
+    @apply w-[10px] h-[10px];
+  }
+
+  .scroll-sm::-webkit-scrollbar {
+    @apply w-[7px] h-[7px];
+  }
+
+  .scroll-lg::-webkit-scrollbar {
+    @apply w-[14px] h-[14px];
+  }
+
+  body::-webkit-scrollbar-thumb,
+  .scroll::-webkit-scrollbar-thumb,
+  .scroll-sm::-webkit-scrollbar-thumb,
+  .scroll-lg::-webkit-scrollbar-thumb {
+    @apply bg-light-primary/60 cursor-pointer rounded-[3px];
+  }
+
+  body::-webkit-scrollbar-thumb:hover,
+  .scroll::-webkit-scrollbar-thumb:hover,
+  .scroll-sm::-webkit-scrollbar-thumb:hover,
+  .scroll-lg::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary;
+  }
+
+  .scroll-none::-webkit-scrollbar {
+    @apply w-0 h-0;
+  }
+
+
+}

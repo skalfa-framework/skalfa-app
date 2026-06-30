@@ -1,6 +1,6 @@
 {
   "name": "@skalfa/skalfa-app",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "scripts": {
     "dev": "concurrently --raw \"bun run skalfa watch:barrels\" \"next dev\"",
     "build": "next build",
@@ -16,7 +16,8 @@
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@react-google-maps/api": "^2.20.7",
-    "@skalfa/skalfa-app-core": "^1.0.3",
+    "@skalfa/skalfa-app-core": "^1.0.7",
+    "@skalfa/skalfa-component": "workspace:*",
     "@tailwindcss/postcss": "^4.0.0",
     "axios": "^1.12.0",
     "moment": "^2.30.1",

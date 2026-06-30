@@ -3,6 +3,7 @@
  */
 
 export * from "./layout";
+export * from "./manifest";
 export * from "./page";
 export * from "./auth/edit/page";
 export * from "./auth/login/page";
