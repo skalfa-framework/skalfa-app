@@ -1,13 +1,14 @@
 {
   "name": "@skalfa/skalfa-app",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "scripts": {
-    "dev": "concurrently --raw \"bun run skalfa watch:barrels\" \"next dev\"",
+    "dev": "concurrently --raw 'next dev' 'bun run skalfa watch:barrels'",
+    "watch": "next dev",
     "build": "next build",
     "start": "next start",
+    "skalfa": "bun run utils/commands/skalfa.ts",
     "test": "bun tsc --noEmit",
-    "lint": "npx eslint app/* components/* utils/* contexts/* schema/*",
-    "skalfa": "bun run utils/commands/skalfa.ts"
+    "lint": "npx eslint app/* components/* utils/* contexts/*"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
@@ -16,7 +17,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@react-google-maps/api": "^2.20.7",
-    "@skalfa/skalfa-app-core": "^1.0.7",
+    "@skalfa/skalfa-app-core": "^1.0.8",
     "@skalfa/skalfa-component": "workspace:*",
     "@tailwindcss/postcss": "^4.0.0",
     "axios": "^1.12.0",

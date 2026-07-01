@@ -10,10 +10,10 @@ export default function ExampleLayout({ children }: { children: ReactNode }) {
           head={
             <div className="px-4">
               <a href="#" className="text-2xl font-extrabold italic">
-                NEXT-LIGHT v.3
+                SKALFA APP
               </a>
               <p className="text-sm -mt-1 font-semibold text-slate-400">
-                The Magic Starter Template
+                Framework & Template
               </p>
             </div>
           }
