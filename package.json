@@ -2,7 +2,7 @@
   "name": "@skalfa/skalfa-app",
   "version": "1.0.6",
   "scripts": {
-    "dev": "concurrently --raw 'next dev' 'bun run skalfa watch:barrels'",
+    "dev": "concurrently --raw 'bun next dev' 'bun run skalfa watch:barrels'",
     "watch": "next dev",
     "build": "next build",
     "start": "next start",
