@@ -1,6 +1,6 @@
 {
   "name": "@skalfa/skalfa-app",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "scripts": {
     "dev": "concurrently --raw 'bun next dev' 'bun run skalfa watch:barrels'",
     "watch": "next dev",

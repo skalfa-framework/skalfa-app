@@ -19,7 +19,7 @@
       "@/*"            :  ["./*"],
       "@utils"         :  ["./utils/index.ts"],
       "@utils/*"       :  ["./utils/*"],
-      "@components"    :  ["./components/index.ts", "../skalfa-component/dist/index.d.ts"],
+      "@components"    :  ["./components/index.ts"],
       "@components/*"  :  ["./components/*", "../skalfa-component/dist/*"],
       "@skalfa/skalfa-component": ["../skalfa-component/dist/index.d.ts"],
       "@skalfa/skalfa-component/*": ["../skalfa-component/dist/*"],
