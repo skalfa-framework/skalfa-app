@@ -1,0 +1,36 @@
+services:
+  # ==========================================
+  # Production — bun run start
+  # ==========================================
+  ${NEXT_PUBLIC_APP_NAME}:
+    container_name: ${NEXT_PUBLIC_APP_NAME}
+    build:
+      context: .
+      target: production
+    image: ${NEXT_PUBLIC_APP_NAME}:latest
+    ports:
+      - "${NEXT_PUBLIC_APP_PORT:-3000}:${NEXT_PUBLIC_APP_PORT:-3000}"
+    env_file: .env
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+
+  # ==========================================
+  # Development — bun run watch (port + 1)
+  # ==========================================
+  ${NEXT_PUBLIC_APP_NAME}_dev:
+    container_name: ${NEXT_PUBLIC_APP_NAME}_dev
+    build:
+      context: .
+      target: development
+    image: ${NEXT_PUBLIC_APP_NAME}:dev
+    ports:
+      - "${NEXT_PUBLIC_APP_PORT_DEV:-3001}:${NEXT_PUBLIC_APP_PORT:-3000}"
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    env_file: .env
+    environment:
+      - NODE_ENV=development
+    restart: unless-stopped
