@@ -1,8 +1,8 @@
 {
   "name": "@skalfa/skalfa-app",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "scripts": {
-    "dev": "concurrently --raw 'bun next dev' 'bun run skalfa watch:barrels'",
+    "dev": "node utils/commands/dev.js",
     "watch": "next dev",
     "build": "next build",
     "start": "next start",
