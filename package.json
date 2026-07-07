@@ -1,24 +1,26 @@
 {
-  "name": "@skalfa/skalfa-app",
-  "version": "1.0.11",
-  "scripts": {
-    "dev": "bun run skalfa dev",
-    "watch": "bun run skalfa watch",
-    "build": "bun run skalfa build",
-    "start": "bun run skalfa start",
-    "skalfa": "bun run utils/commands/skalfa.ts",
-    "test": "bun run skalfa test",
-    "lint": "bun run skalfa lint"
+  "name"         :  "@skalfa/skalfa-app",
+  "version"      :  "1.0.12",
+  "description"  :  "Modern frontend starter template built with Next.js, pre-configured with PWA, Tauri, and modular extensions.",
+  "keywords"     :  ["skalfa", "skalfa-app", "next-framework", "next-template"],
+  "license"      :  "MIT",
+  "scripts"      :  {
+    "dev"     :  "bun run skalfa dev",
+    "watch"   :  "bun run skalfa watch",
+    "build"   :  "bun run skalfa build",
+    "start"   :  "bun run skalfa start",
+    "skalfa"  :  "bun run utils/commands/skalfa.ts",
+    "test"    :  "bun run skalfa test",
+    "lint"    :  "bun run skalfa lint"
   },
   "dependencies": {
+    "@skalfa/skalfa-app-core": "*",
+    "@skalfa/skalfa-component": "*",
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
     "@fortawesome/free-regular-svg-icons": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
-    "@react-google-maps/api": "^2.20.7",
-    "@skalfa/skalfa-app-core": "^1.0.11",
-    "@skalfa/skalfa-component": "^1.0.4",
     "@tailwindcss/postcss": "^4.0.0",
     "axios": "^1.12.0",
     "moment": "^2.30.1",
@@ -40,7 +42,5 @@
     "eslint-config-next": "^15.1.6",
     "eslint-config-prettier": "^10.0.1",
     "typescript": "^6.0.3"
-  },
-  "description": "Modern frontend starter template built with Next.js, pre-configured with PWA, Tauri, and modular extensions.",
-  "license": "MIT"
+  }
 }
