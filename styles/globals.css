@@ -3,6 +3,13 @@
 @import "./utilities.css";
 
 
+/* ============================ */
+/* ## Support external styling  */
+/* ============================ */
+@source "../../node_modules/@skalfa";
+@source "../node_modules/@skalfa";
+
+
 
 @theme {
   /* ============================ */
