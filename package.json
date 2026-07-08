@@ -1,6 +1,6 @@
 {
   "name"         :  "@skalfa/skalfa-app",
-  "version"      :  "1.0.13",
+  "version"      :  "1.0.14",
   "description"  :  "Modern frontend starter template built with Next.js, pre-configured with PWA, Tauri, and modular extensions.",
   "keywords"     :  ["skalfa", "skalfa-app", "next-framework", "next-template"],
   "license"      :  "MIT",

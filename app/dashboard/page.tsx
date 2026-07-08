@@ -1,4 +1,4 @@
-export default function Example() {
+export default function WelcomePage() {
   return (
     <>
       <div className="flex justify-center items-center h-screen">

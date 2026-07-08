@@ -1,46 +1,38 @@
+"use client"
+
 import { TableSupervisionComponent} from "@components";
 import { Suspense } from "react";
 
-export default function Table() {
+
+
+export default function UserPage() {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <TableSupervisionComponent
         title="User"
-        fetchControl={{
-          path: "users",
-        }}
+        fetchControl={{ path: "users" }}
         columnControl={[
           {
             selector: "name",
             label: "Nama",
             sortable: true,
-            filterable: true,
             width: "350px",
           },
           {
-            selector: "email",
-            label: "Email",
+            selector: "username",
+            label: "Username",
             sortable: true,
             width: "250px",
           },
         ]}
-        detailControl={[
-          {
-            label: "Nama",
-            item: "name",
-          },
-          {
-            label: "Email",
-            item: "email",
-          }
-        ]}
+        detailControl={false}
         formControl={{
           fields: [
             {
               construction: {
-                name: "email",
-                label: "E-mail",
-                placeholder: "Ex: example@mail.com",
+                name: "username",
+                label: "Username",
+                placeholder: "Ex: joko.gunawan",
                 validations: ["required"],
               },
             },
@@ -55,19 +47,12 @@ export default function Table() {
               construction: {
                 name: "password",
                 label: "Password",
-                placeholder: "Ex: secret123",
-              }
-            },
-            {
-              construction: {
-                type: "file",
-                name: "image",
-                label: "Picture",
+                placeholder: "Ex: Secret#123",
               }
             },
           ],
         }}
-        controlBar={["CREATE", "FILTER", "SEARCH", "SORT", "SELECTABLE", "IMPORT", "EXPORT", "PRINT", "REFRESH"]}
+        controlBar={["CREATE", "SEARCH", "SORT", "SELECTABLE", "REFRESH"]}
         responsiveControl={{
           mobile: true,
         }}

@@ -1,7 +1,9 @@
 import { ReactNode } from "react";
 import { SidebarComponent, SidebarContentComponent } from "@components";
 
-export default function ExampleLayout({ children }: { children: ReactNode }) {
+
+
+export default function DashboardLayout({ children }: { children: ReactNode }) {
   return (
     <>
       <div className="flex">
@@ -19,20 +21,20 @@ export default function ExampleLayout({ children }: { children: ReactNode }) {
           }
           items={[
             {
-              label: "WELCOME",
-              items: [
+              label  :  "WELCOME",
+              items  :  [
                 {
-                  label: "Welcome",
-                  path: "/",
+                  label  :  "Welcome",
+                  path   :  "/",
                 },
               ],
             },
             {
-              label: "USER",
-              items: [
+              label  :  "USER",
+              items  :  [
                 {
-                  label: "User",
-                  path: "/user",
+                  label  :  "User",
+                  path   :  "/user",
                 },
               ]
             },

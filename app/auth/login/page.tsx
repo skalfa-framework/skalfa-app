@@ -3,9 +3,10 @@
 import { useRouter } from "next/navigation";
 import { ButtonComponent, CardComponent, FormSupervisionComponent } from "@components";
 import { useAuthContext } from "@contexts";
-import Link from "next/link";
 
-export default function Login() {
+
+
+export default function LoginPage() {
   const router = useRouter();
   const {setAccessToken,setUser} = useAuthContext();
 
@@ -20,18 +21,18 @@ export default function Login() {
             fields={[
               {
                 construction: {
-                  name: "email",
-                  label: "E-mail",
-                  placeholder: "Ex: example@mail.com",
-                  validations: "required|min:10|max:50|email"
+                  name         :  "username",
+                  label        :  "Username",
+                  placeholder  :  "Ex: admin",
+                  validations  :  ["required"],
                 }
               },
               {
                 construction: {
-                  type: "password",
-                  name: "password",
-                  label: "Password",
-                  placeholder: "Ex: secret123",
+                  type         :  "password",
+                  name         :  "password",
+                  label        :  "Password",
+                  placeholder  :  "Enter your password",
                 }
               }
             ]}
@@ -41,7 +42,7 @@ export default function Login() {
             onSuccess={(res) => {
               setAccessToken(res?.data?.token)
               setUser(res?.data?.user)
-              router.push("/auth/me")
+              router.push("/dashboard")
             }}
             footerControl={() => (
               <>
@@ -51,8 +52,6 @@ export default function Login() {
                   block
                   className="mt-4"
                 />
-
-                <p className="mt-4 text-center">Don&apos;t have an account yet? <Link href="/auth/register" className="text-primary underline">Create Account</Link></p>
               </>
             )}
           />
