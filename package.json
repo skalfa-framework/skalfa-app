@@ -14,8 +14,8 @@
     "lint"         :  "bun run skalfa lint",
     "tauri:dev"    :  "bun tauri dev",
     "tauri:build"  :  "bun tauri build",
-    "icon:dev"     :  "skalfa icon dev",
-    "icon:build"   :  "skalfa icon build",
+    "icon:dev"     :  "bun run skalfa icon dev",
+    "icon:build"   :  "bun run skalfa icon build",
     "lang:dev"     :  "skalfa lang dev",
     "lang:build"   :  "skalfa lang build"
   },
