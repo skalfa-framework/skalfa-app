@@ -1,0 +1,17 @@
+{
+  "required": "Kolom ini wajib diisi!",
+  "min": "Kolom harus berisi lebih dari {min} karakter!",
+  "max": "Kolom harus kurang dari {max} karakter!",
+  "min_max": "Kolom harus berisi antara {min} - {max} karakter!",
+  "phone": "Silakan masukkan nomor telepon yang valid!",
+  "url": "Silakan masukkan URL yang valid!",
+  "uppercase": "Kolom harus mengandung minimal 1 huruf besar!",
+  "lowercase": "Kolom harus mengandung minimal 1 huruf kecil!",
+  "numeric": "Kolom harus mengandung minimal 1 angka!",
+  "email": "Silakan masukkan alamat email yang valid!",
+  "in": "Kolom harus berupa salah satu dari: {keywords}!",
+  "not_in": "Kolom tidak boleh berupa salah satu dari: {keywords}!",
+  "regex": "Silakan masukkan format yang valid!",
+  "invalid_file_type": "Hanya memperbolehkan ekstensi {extension}!",
+  "max_file_size": "Ukuran file maksimum {maxFileSize} Mb!"
+}

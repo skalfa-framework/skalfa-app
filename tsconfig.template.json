@@ -28,9 +28,7 @@
       "@schema"        :  ["./schema/index.ts"],
       "@schema/*"      :  ["./schema/*"],
       "@styles/*"      :  ["./styles/*"],
-      "@public/*"      :  ["./public/*"],
-      "@types/react"   :  ["./node_modules/@types/react"],
-      "@types/react-dom": ["./node_modules/@types/react-dom"]
+      "@public/*"      :  ["./public/*"]
     },
     "plugins"  :  [{ "name": "next" }]
   }

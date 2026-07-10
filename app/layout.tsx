@@ -1,14 +1,11 @@
 import { ReactNode } from "react";
 import { Metadata } from "next";
 
-import { Roboto } from "next/font/google";
+import { Inter } from "next/font/google";
 import "@styles/globals.css";
 
 import moment from "moment";
 import "moment/locale/id";
-
-import { config } from "@fortawesome/fontawesome-svg-core";
-import "@fortawesome/fontawesome-svg-core/styles.css";
 
 import { ContextAppProvider } from "@contexts/AppProvider";
 import { ShortcutProvider } from "@components";
@@ -16,12 +13,11 @@ import { ShortcutProvider } from "@components";
 
 
 moment.locale("id");
-config.autoAddCss = false;
 
 
-const font = Roboto({
+const font = Inter({
   subsets: ["latin"],
-  weight: ["100", "300", "400", "500", "700", "900"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 

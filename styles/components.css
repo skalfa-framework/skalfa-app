@@ -68,14 +68,14 @@
 
   /* ## Button size */
   .button-lg { @apply px-14 py-3 flex items-center gap-3 rounded-sm; }
-  .button-md { @apply px-8 py-2 flex items-center gap-2 rounded-sm; }
+  .button-md { @apply px-8 py-2.5 flex items-center gap-2 rounded-sm; }
   .button-sm { @apply px-6 py-2 text-xs flex items-center gap-2 rounded-sm; }
   .button-xs { @apply px-3 py-1 text-xs flex items-center gap-1.5 rounded-xs; }
 
   /* ## Icon button size */
   .icon-button-lg { @apply w-10 h-10 flex items-center justify-center rounded-sm; }
   .icon-button-md { @apply w-8 h-8 flex items-center justify-center rounded-sm; }
-  .icon-button-sm { @apply w-7 h-7 text-xs flex items-center justify-center rounded-sm; }
+  .icon-button-sm { @apply w-8 h-8 text-xs flex items-center justify-center rounded-sm; }
   .icon-button-xs { @apply w-6 h-6 text-xs flex items-center justify-center rounded-xs; }
 
   /* ## Button loading size */
@@ -506,7 +506,7 @@
   }
 
   .modal-confirm {
-    @apply rounded-[4px] border-t-4 !border-primary max-w-[300px];
+    @apply rounded-sm max-w-[400px];
   }
 
   .modal-header {
@@ -526,7 +526,7 @@
   }
 
   .floating-page {
-    @apply fixed top-[1rem] right-0 bg-background lg:top-0 h-screen z-40 border-t-4 md:border-t-0 md:border-l-4 !border-primary overflow-hidden overflow-y-auto w-[100vw] md:w-[50vw] max-w-[700px];
+    @apply fixed top-[1rem] right-0 bg-background lg:top-0 h-screen z-40 border-t-4 md:border-t-0 md:border-l-4 overflow-hidden overflow-y-auto w-[100vw] md:w-[50vw] max-w-[700px];
   }
 
   .modal-backdrop {
@@ -806,10 +806,10 @@
     @apply md:px-1.5 relative;
   }
   .control-bar-icon-button {
-    @apply !text-foreground p-4;
+    @apply text-foreground;
   }
   .control-bar-filter-button {
-    @apply !text-foreground;
+    @apply text-foreground;
   }
   .control-bar-dropdown {
     @apply absolute -bottom-4 bg-white translate-y-full right-0 w-[240px] z-20 rounded-lg border border-stroke transition-all duration-200;
@@ -1119,22 +1119,22 @@
   /* ## Sidebar                   */
   /* ============================ */
   .sidebar-backdrop {
-    @apply absolute top-0 left-0 w-full h-full bg-background/50 blur-md z-20 md:hidden;
+    @apply absolute top-0 left-0 w-full h-full bg-background/50 blur-md z-20 lg:hidden;
   }
   .sidebar-base {
-    @apply flex flex-col fixed w-full sm:w-64 h-screen px-2 py-4 overflow-y-auto bg-white z-20 rounded-r-[8px] border-r;
+    @apply flex flex-col fixed w-full lg:w-[280px] h-screen overflow-y-auto overflow-x-hidden bg-white z-20 rounded-r-[8px] border-r;
   }
   .sidebar-head-item {
-    @apply flex justify-between items-center text-light-foreground font-semibold py-2 text-xs uppercase;
+    @apply flex justify-between items-center text-light-foreground font-medium px-4 py-4 text-xs uppercase tracking-wider;
   }
   .sidebar-item {
-    @apply flex items-center justify-between px-2 py-2 gap-2 transition-colors duration-300 transform hover:text-primary cursor-pointer transition-none;
+    @apply flex items-center justify-between px-4 py-4 gap-2 transition-colors duration-300 transform hover:text-primary cursor-pointer transition-none;
   }
   .sidebar-item-active {
-    @apply text-primary border-l-2 border-primary pl-4;
+    @apply text-primary border-l-4 border-primary pl-4;
   }
   .sidebar-child-item {
-    @apply flex items-center justify-between px-2 py-2 gap-2 transition-colors duration-300 transform hover:text-primary cursor-pointer transition-none border-l-2;
+    @apply flex items-center justify-between px-4 py-3 gap-2 transition-colors duration-300 transform hover:text-primary cursor-pointer transition-none border-l-2;
   }
   .sidebar-child-item-active {
     @apply text-primary border-primary pl-4;
@@ -1385,8 +1385,4 @@
   .shortcut-key-badge {
     @apply px-2 py-1 border rounded bg-gray-100 w-max;
   }
-
 }
-
-
-

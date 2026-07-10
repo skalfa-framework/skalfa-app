@@ -44,13 +44,15 @@ export default function LoginPage() {
               setUser(res?.data?.user)
               router.push("/dashboard")
             }}
-            footerControl={() => (
+            successMessage="Berhasil Masuk!"
+            footerControl={({ loading }) => (
               <>
                 <ButtonComponent
                   type="submit"
                   label="Login Now"
                   block
                   className="mt-4"
+                  loading={loading}
                 />
               </>
             )}

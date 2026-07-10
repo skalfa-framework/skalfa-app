@@ -1,0 +1,17 @@
+{
+  "required": "Please fill in this field!",
+  "min": "Field must contain more than {min} characters!",
+  "max": "Field must be less than {max} characters!",
+  "min_max": "Field must be {min} - {max} characters!",
+  "phone": "Please enter a valid mobile number!",
+  "url": "Please enter a valid URL!",
+  "uppercase": "Field must contain at least 1 uppercase letter!",
+  "lowercase": "Field must contain at least 1 lowercase letter!",
+  "numeric": "Field must contain at least 1 number!",
+  "email": "Please enter a valid email address!",
+  "in": "Field must be one of: {keywords}!",
+  "not_in": "Field cannot be one of: {keywords}!",
+  "regex": "Please enter a valid format!",
+  "invalid_file_type": "Only extensions {extension} are allowed!",
+  "max_file_size": "Maximum file size is {maxFileSize} Mb!"
+}

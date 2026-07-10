@@ -8,6 +8,7 @@
 /* ============================ */
 @source "../../node_modules/@skalfa";
 @source "../node_modules/@skalfa";
+@source "../../skalfa-component/src";
 
 
 
@@ -97,7 +98,7 @@
   /* ## All default style         */
   /* ============================ */
   * {
-    @apply transition duration-75 border-stroke;
+    @apply transition duration-150 border-stroke;
   }
 }
 
