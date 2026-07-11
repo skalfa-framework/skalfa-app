@@ -4,13 +4,10 @@
     "": {
       "name": "@skalfa/skalfa-app",
       "dependencies": {
-        "@fortawesome/fontawesome-svg-core": "^6.7.2",
-        "@fortawesome/free-brands-svg-icons": "^6.7.2",
-        "@fortawesome/free-regular-svg-icons": "^6.7.2",
-        "@fortawesome/free-solid-svg-icons": "^6.7.2",
-        "@fortawesome/react-fontawesome": "^0.2.2",
-        "@skalfa/skalfa-app-core": "^1.0.15",
-        "@skalfa/skalfa-component": "^1.0.8",
+        "@skalfa/skalfa-app-core": "^1.0.18",
+        "@skalfa/skalfa-component": "*",
+        "@skalfa/skalfa-icon": "*",
+        "@skalfa/skalfa-lang": "^1.0.2",
         "@tailwindcss/postcss": "^4.0.0",
         "axios": "^1.12.0",
         "moment": "^2.30.1",
@@ -60,12 +57,6 @@
     "@fortawesome/fontawesome-common-types": ["@fortawesome/fontawesome-common-types@6.7.2", "", {}, "sha512-Zs+YeHUC5fkt7Mg1l6XTniei3k4bwG/yo3iFUtZWd/pMx9g3fdvkSK9E0FOC+++phXOka78uJcYb8JaFkW52Xg=="],
 
     "@fortawesome/fontawesome-svg-core": ["@fortawesome/fontawesome-svg-core@6.7.2", "", { "dependencies": { "@fortawesome/fontawesome-common-types": "6.7.2" } }, "sha512-yxtOBWDrdi5DD5o1pmVdq3WMCvnobT0LU6R8RyyVXPvFRd2o79/0NCuQoCjNTeZz9EzA9xS3JxNWfv54RIHFEA=="],
-
-    "@fortawesome/free-brands-svg-icons": ["@fortawesome/free-brands-svg-icons@6.7.2", "", { "dependencies": { "@fortawesome/fontawesome-common-types": "6.7.2" } }, "sha512-zu0evbcRTgjKfrr77/2XX+bU+kuGfjm0LbajJHVIgBWNIDzrhpRxiCPNT8DW5AdmSsq7Mcf9D1bH0aSeSUSM+Q=="],
-
-    "@fortawesome/free-regular-svg-icons": ["@fortawesome/free-regular-svg-icons@6.7.2", "", { "dependencies": { "@fortawesome/fontawesome-common-types": "6.7.2" } }, "sha512-7Z/ur0gvCMW8G93dXIQOkQqHo2M5HLhYrRVC0//fakJXxcF1VmMPsxnG6Ee8qEylA8b8Q3peQXWMNZ62lYF28g=="],
-
-    "@fortawesome/free-solid-svg-icons": ["@fortawesome/free-solid-svg-icons@6.7.2", "", { "dependencies": { "@fortawesome/fontawesome-common-types": "6.7.2" } }, "sha512-GsBrnOzU8uj0LECDfD5zomZJIjrPhIlWU82AHwa2s40FKH+kcxQaBvBo3Z4TxyZHIyX8XTDxsyA33/Vx9eFuQA=="],
 
     "@fortawesome/react-fontawesome": ["@fortawesome/react-fontawesome@0.2.2", "", { "dependencies": { "prop-types": "^15.8.1" }, "peerDependencies": { "@fortawesome/fontawesome-svg-core": "~1 || ~6", "react": ">=16.3" } }, "sha512-EnkrprPNqI6SXJl//m29hpaNzOp1bruISWaOiRtkMi/xSvHJlzc2j2JAYS7egxt/EbjSNV/k6Xy0AQI6vB2+1g=="],
 
@@ -159,9 +150,13 @@
 
     "@rushstack/eslint-patch": ["@rushstack/eslint-patch@1.10.5", "", {}, "sha512-kkKUDVlII2DQiKy7UstOR1ErJP8kUKAQ4oa+SQtM0K+lPdmmjj0YnnxBgtTVYH7mUKtbsxeFC9y0AmK7Yb78/A=="],
 
-    "@skalfa/skalfa-app-core": ["@skalfa/skalfa-app-core@1.0.15", "", { "dependencies": { "axios": "^1.12.0", "clsx": "^2.1.1", "commander": "^12.1.0", "crypto-js": "^4.2.0", "js-cookie": "^3.0.5", "lz-string": "^1.5.0", "moment": "^2.30.1", "tailwind-merge": "^3.0.2", "validator": "^13.15.22" }, "peerDependencies": { "next": "^15.0.0 || ^16.0.0", "react": "^19.0.0", "react-dom": "^19.0.0" } }, "sha512-p59U/coEbyhRorokW+f3or9DpvR1tzEHLkk6NS0CpXe1nA+/rdtXvkfBkppMz0oJBMfY0+pmx2vaTXzFFwCTMA=="],
+    "@skalfa/skalfa-app-core": ["@skalfa/skalfa-app-core@1.0.18", "", { "dependencies": { "@skalfa/skalfa-lang": "*", "axios": "^1.12.0", "clsx": "^2.1.1", "commander": "^12.1.0", "crypto-js": "^4.2.0", "js-cookie": "^3.0.5", "lz-string": "^1.5.0", "moment": "^2.30.1", "tailwind-merge": "^3.0.2", "validator": "^13.15.22" }, "peerDependencies": { "next": "^15.0.0 || ^16.0.0", "react": "^19.0.0", "react-dom": "^19.0.0" } }, "sha512-tzLm52k3FA2nqncQqwc8ldCCSD2bfXS+cGFowLVEQQ2iYKMdfv1MLcXd1Ullxg0OTzj0asF6KQgByxx9vKtNDg=="],
 
     "@skalfa/skalfa-component": ["@skalfa/skalfa-component@1.0.8", "", { "peerDependencies": { "@fortawesome/react-fontawesome": "^0.2.2", "@skalfa/skalfa-app-core": "*", "next": "^15.0.0 || ^16.0.0", "react": "^19.0.0", "react-dom": "^19.0.0" } }, "sha512-IBLi9ymwfbqKsemOxPcXIOZvDGZr3E2wZiJ3MNzuvWj22EISSwui3SgeI/oZgt1NYW/3UB50RfY2C70TGvyURA=="],
+
+    "@skalfa/skalfa-icon": ["@skalfa/skalfa-icon@1.0.0", "", { "peerDependencies": { "react": "^18.0.0 || ^19.0.0" }, "bin": { "skalfa-icon": "scripts/generate.ts" } }, "sha512-Bfe7bm5uHNOfg5h5Y6+6ROl9CULvfBZSKSiwUerNFSTNZ+Ve445pfiKWTXat6+J1UaP/QuYgxEF1YPTDgbb1gA=="],
+
+    "@skalfa/skalfa-lang": ["@skalfa/skalfa-lang@1.0.2", "", { "peerDependencies": { "react": "^18.0.0 || ^19.0.0" }, "optionalPeers": ["react"] }, "sha512-0zhwt1sxOSVlI6ybwbt4kZdZvmt2wI5t16x3l5GKeucHJOEupJFoMgYIrODaX/QRHZkM4K/y9005EUxN1ULYPw=="],
 
     "@swc/helpers": ["@swc/helpers@0.5.15", "", { "dependencies": { "tslib": "^2.8.0" } }, "sha512-JQ5TuMi45Owi4/BIMAJBoSQoOJu12oOk/gADqlcUL9JEdHB8vyjUSsxqeNXnmXHjYKMi2WcYtezGEEhqUI/E2g=="],
 
