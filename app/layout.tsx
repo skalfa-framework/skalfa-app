@@ -10,8 +10,6 @@ import "moment/locale/id";
 import { ContextAppProvider } from "@contexts/AppProvider";
 import { ShortcutProvider } from "@components";
 
-
-
 moment.locale("id");
 
 
