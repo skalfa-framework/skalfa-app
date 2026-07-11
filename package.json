@@ -1,6 +1,6 @@
 {
   "name"         :  "@skalfa/skalfa-app",
-  "version"      :  "1.0.15",
+  "version"      :  "1.0.16",
   "description"  :  "Modern frontend starter template built with Next.js, pre-configured with PWA, Tauri, and modular extensions.",
   "keywords"     :  ["skalfa", "skalfa-app", "next-framework", "next-template"],
   "license"      :  "MIT",
@@ -16,8 +16,8 @@
     "tauri:build"  :  "bun tauri build",
     "icon:dev"     :  "bun run skalfa icon dev",
     "icon:build"   :  "bun run skalfa icon build",
-    "lang:dev"     :  "skalfa lang dev",
-    "lang:build"   :  "skalfa lang build"
+    "lang:dev"     :  "bun run skalfa lang dev",
+    "lang:build"   :  "bun run skalfa lang build"
   },
   "dependencies": {
     "@skalfa/skalfa-app-core": "*",
