@@ -6,7 +6,7 @@ WORKDIR /app
 # Stage 1: Install dependencies
 # ===================================================
 FROM base AS install
-COPY package.json bun.lock ./
+COPY package.json ./
 RUN bun install --frozen-lockfile --production
 
 # ===================================================

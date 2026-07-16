@@ -1,6 +1,6 @@
 {
   "directory": ["components", "contexts", "app"],
-  "delete": true,
+  "delete": false,
   "exclude": ["index.ts"],
   "structure": "flat"
 }

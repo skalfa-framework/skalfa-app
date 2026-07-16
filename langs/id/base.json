@@ -61,6 +61,10 @@
 
   "column": "Kolom",
 
+  "passwordConfirm": "Konfirmasi Kata sandi",
+  "passwordConfirmPlaceholder": "Ulangi kata sandi...",
+  "passwordConfirmFailed": "Tidak sama dengan kata sandi!",
+
   "tableLoading": "Memuat data...",
   "tableEmpty": "Belum ada data",
   "tableSelected": "Data Terpilih"

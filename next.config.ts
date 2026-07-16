@@ -5,6 +5,12 @@ import path from "path";
 
 let nextConfig: NextConfig = {
   reactStrictMode: true,
+  transpilePackages: [
+    "@skalfa/skalfa-component",
+    "@skalfa/skalfa-icon",
+    "@skalfa/skalfa-app-core",
+    "@skalfa/skalfa-lang"
+  ],
   images: {
     remotePatterns: [
       {

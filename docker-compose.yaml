@@ -1,8 +1,8 @@
 services:
   # ==========================================
-  # Production — bun run start
+  # ## Production — bun run start
   # ==========================================
-  ${NEXT_PUBLIC_APP_NAME}:
+  prod:
     container_name: ${NEXT_PUBLIC_APP_NAME}
     build:
       context: .
@@ -16,9 +16,9 @@ services:
     restart: unless-stopped
 
   # ==========================================
-  # Development — bun run watch (port + 1)
+  # ## Development — bun run watch (port + 1)
   # ==========================================
-  ${NEXT_PUBLIC_APP_NAME}_dev:
+  dev:
     container_name: ${NEXT_PUBLIC_APP_NAME}_dev
     build:
       context: .

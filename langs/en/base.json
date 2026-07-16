@@ -61,6 +61,10 @@
 
   "column": "Column",
 
+  "passwordConfirm": "Confirm Password",
+  "passwordConfirmPlaceholder": "Repeat password...",
+  "passwordConfirmFailed": "Passwords do not match!",
+
   "tableLoading": "Loading data...",
   "tableEmpty": "No data available",
   "tableSelected": "Selected Data"

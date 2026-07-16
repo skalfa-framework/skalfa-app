@@ -56,6 +56,9 @@ export interface Lang {
     filterBookmarkNew(): string;
     filterBookmarkNewPlaceholder(): string;
     column(): string;
+    passwordConfirm(): string;
+    passwordConfirmPlaceholder(): string;
+    passwordConfirmFailed(): string;
     tableLoading(): string;
     tableEmpty(): string;
     tableSelected(): string;
