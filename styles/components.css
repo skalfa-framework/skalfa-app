@@ -1385,4 +1385,132 @@
   .shortcut-key-badge {
     @apply px-2 py-1 border rounded bg-gray-100 w-max;
   }
+
+  /* ============================ */
+  /* ## Input Content (WYSIWYG)   */
+  /* ============================ */
+  .skcontent-container {
+    @apply flex flex-col rounded-[6px] border border-stroke bg-background overflow-hidden transition duration-150 ease-in-out focus-within:border-primary;
+  }
+
+  .skcontent-container-disabled {
+    @apply opacity-60 pointer-events-none bg-light-disable;
+  }
+
+  .skcontent-container-error {
+    @apply !border-light-danger bg-light-danger/20;
+  }
+
+  .skcontent-toolbar {
+    @apply flex flex-wrap items-center gap-1 p-1.5 bg-background border-b border-stroke text-foreground select-none relative;
+  }
+
+  .skcontent-toolbar-btn, .toolbar-btn {
+    @apply flex items-center justify-center w-8 h-8 rounded text-sm text-foreground hover:text-primary transition-colors duration-150 cursor-pointer disabled:opacity-40 disabled:pointer-events-none;
+  }
+
+  .skcontent-toolbar-btn-active, .toolbar-btn-active {
+    @apply text-primary;
+  }
+
+  .skcontent-toolbar-sep {
+    @apply w-px h-5 bg-stroke/60 mx-1;
+  }
+
+  .skcontent-dropdown {
+    @apply absolute top-full left-0 mt-1.5 z-50 flex flex-col bg-background border border-stroke rounded-md shadow-lg p-1 min-w-[120px];
+  }
+
+  .skcontent-dropdown-item {
+    @apply flex items-center gap-2 px-3 py-1.5 text-xs rounded text-foreground hover:bg-light-primary hover:text-primary transition-colors cursor-pointer w-full text-left;
+  }
+
+  .skcontent-link-input {
+    @apply flex-row gap-1.5 p-2 min-w-[240px];
+  }
+
+  .skcontent-link-url-input {
+    @apply flex-1 px-2.5 py-1 text-xs rounded border border-stroke bg-background text-foreground focus:outline-none focus:border-primary;
+  }
+
+  .skcontent-link-submit {
+    @apply px-2.5 py-1 text-xs rounded bg-primary text-white hover:brightness-110 flex items-center justify-center transition;
+  }
+
+  .skcontent-color-picker {
+    @apply flex-row gap-2 p-2 min-w-max items-center;
+  }
+
+  .skcontent-color-icon {
+    @apply font-bold text-sm underline decoration-2 underline-offset-2;
+  }
+
+  .skcontent-color-dot {
+    @apply w-4 h-4 rounded-full border border-stroke/50 hover:scale-110 transition-transform cursor-pointer shadow-sm;
+  }
+
+  .skcontent-editor {
+    @apply min-h-[140px] max-h-[500px] overflow-y-auto p-3 text-sm text-foreground leading-relaxed focus:outline-none;
+  }
+
+  .skcontent-editor-disabled {
+    @apply opacity-60 cursor-not-allowed;
+  }
+
+  .skcontent-editor:empty:before {
+    content: attr(data-placeholder);
+    @apply text-light-foreground opacity-60 pointer-events-none float-left;
+  }
+
+  .skcontent-editor h2 {
+    @apply text-lg font-semibold mb-2 mt-1;
+  }
+
+  .skcontent-editor ul {
+    @apply list-disc pl-5 mb-2 space-y-0.5;
+  }
+
+  .skcontent-editor ol {
+    @apply list-decimal pl-5 mb-2 space-y-0.5;
+  }
+
+  .skcontent-editor p {
+    @apply mb-1;
+  }
+
+  .skcontent-editor a {
+    @apply text-primary underline;
+  }
+
+  .skcontent-divider {
+    @apply py-2 cursor-default select-none;
+  }
+
+  .skcontent-divider hr {
+    @apply border-0 border-b border-stroke/60 my-0;
+  }
+
+  .skcontent-wrapper {
+    @apply text-sm text-foreground leading-relaxed;
+  }
+
+  .skcontent-wrapper h2 {
+    @apply text-lg font-semibold mb-2 mt-1;
+  }
+
+  .skcontent-wrapper ul {
+    @apply list-disc pl-5 mb-2 space-y-0.5;
+  }
+
+  .skcontent-wrapper ol {
+    @apply list-decimal pl-5 mb-2 space-y-0.5;
+  }
+
+  .skcontent-wrapper p {
+    @apply mb-1;
+  }
+
+  .skcontent-wrapper a {
+    @apply text-primary underline hover:opacity-80;
+  }
 }
