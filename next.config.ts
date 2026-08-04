@@ -1,8 +1,6 @@
 import type { NextConfig } from "next";
 import path from "path";
 
-
-
 let nextConfig: NextConfig = {
   reactStrictMode: true,
   transpilePackages: [
@@ -26,7 +24,7 @@ let nextConfig: NextConfig = {
       ...config.resolve.alias,
       "@skalfa/skalfa-component"  :  path.resolve(process.cwd(), "../skalfa-component/src"),
       "@skalfa/skalfa-app-core"   :  path.resolve(process.cwd(), "../skalfa-app-core/src"),
-      "@skalfa/skalfa-icon"       :  path.resolve(process.cwd(), "../skalfa-icon/src"),
+      "@skalfa/skalfa-icon"       :  path.resolve(process.cwd(), "icons/.generated"),
       "@skalfa/skalfa-lang"       :  path.resolve(process.cwd(), "../skalfa-lang/src"),
       "@utils"                    :  path.resolve(process.cwd(), "../skalfa-app-core/src"),
       "@components"               :  path.resolve(process.cwd(), "../skalfa-component/src"),
