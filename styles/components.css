@@ -1124,6 +1124,12 @@
   .sidebar-base {
     @apply flex flex-col fixed w-full lg:w-[280px] h-screen overflow-y-auto overflow-x-hidden bg-white z-20 rounded-r-[8px] border-r;
   }
+  .sidebar-active {
+    @apply w-full sm:w-70;
+  }
+  .sidebar-inactive {
+    @apply w-0 sm:w-14 lg:w-70;
+  }
   .sidebar-head-item {
     @apply flex justify-between items-center text-light-foreground font-medium px-4 py-4 text-xs uppercase tracking-wider;
   }
